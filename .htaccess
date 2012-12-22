@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^page-([0-9]+)/?$ index.php?page=$1 [NC]
+RewriteRule ^mp3-page-([0-9]+)/?$ mp3-list.php?page=$1 [NC]
+RewriteRule ^del-list-([0-9]+)$/?$ del-list.php?page=$1 [NC]
+RewriteRule ^share([0-9]+)$/?$ share.php?id=$1 [NC,L]
