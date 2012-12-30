@@ -7,7 +7,7 @@ HiBCS
 ----
 
 `config.php` 填写BAE数据库名称<br />
-①通过平台提供的phpMyAdmin访问，导入`baefile.sql`或使用`install.php`<br />
+①通过平台提供的phpMyAdmin访问，导入`baefile.sql`<br />
 ②运行install.php或force-install.php安装
 不支持URL Rewrite请自行将`no-rewrite-index.php`重命名<br />
 本地或其它空间大文件上传，修改`php.ini`配置例如:<br />
@@ -58,6 +58,6 @@ HiBCS
     rewrite ^/page-([0-9]+)/?$ /index.php?page=$1 last;
     rewrite ^/mp3-page-([0-9]+)/?$ /mp3-list.php?page=$1 last;
     rewrite ^/del-list-([0-9]+)/?$ /del-list.php?page=$1 last;
-    rewrite ^/share-([0-9]+)/?$ /share.php?page=$1 last;
+    rewrite ^/share-([0-9]+)/?$ /share.php?id=$1 last;
 
 #### 免责声明：已限制重复上传时间，防止短时间刷新`bcs.php`重复上传。不对代码的BUG负责！
