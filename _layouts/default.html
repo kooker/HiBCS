@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel="dns-prefetch" href="https://cdn.kooker.jp" /><!-- 将 cdn.kooker.jp 添加到了 DNS 预解析列表中 -->
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="{% for tag in page.tags %}{{ tag }},{% endfor %}{% if page.title %}{{ page.title }},{% endif %}{{ site.title }} " />
+    {% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
+    <meta name="generator" content="Jekyll" />
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.production_url }}/css/normalize.css" />
+    <link rel="stylesheet" href="{{ site.production_url }}/css/grid.css" />
+    <link rel="stylesheet" href="{{ site.production_url }}/css/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="订阅{{ site.title }}" href="{{ site.production_url }}/atom.xml" />
+</head>
+<body>
+
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="row">
+                    <div class="site-name col-mb-12 col-9">
+                                    <a id="logo" href="{{ site.production_url }}">{{ site.title }}</a>
+                    <p class="description">{{ site.tagline }}</p>
+                            </div>
+            <div class="site-search col-3 kit-hidden-tb">
+            <img src="{{ site.production_url }}/assets/img/logo-2x.png" width="249" height="115" />
+            </div>
+            <div class="col-mb-12">
+                <nav id="nav-menu" class="clearfix" role="navigation">
+                    <a href="{{ site.production_url }}">首页</a><a href="/archive/">存档</a><a href="/tags/">标签</a>
+                </nav>
+            </div>
+        </div><!-- end .row -->
+    </div>
+</header><!-- end #header -->
+<div id="body">
+    <div class="container">
+        <div class="row">
+<div class="col-mb-12 col-8" id="main" role="main">
+        {{ content }}
+</div><!-- end #main-->
+<div class="col-mb-12 col-offset-1 col-3 kit-hidden-tb" id="secondary" role="complementary">
+            <section class="widget">
+            <h3 class="widget-title">最新文章</h3>
+            <ul class="widget-list">
+		{% for post in site.posts limit: 10 %}
+                <li><a href="{{ production_url }}{{ post.url }}" title="{{ post.title | escape }}">{{ post.title }}</a></li>
+      		{% endfor %}
+         	</ul>
+		</section>
+
+            <section class="widget">
+            <h3 class="widget-title">MJJ们</h3>
+            <ul class="widget-list">
+                <li><a href="https://blog.qiwei.org/" title="气总的大站">气总</a></li>
+                <li><a href="https://www.renzha.net/" title="疯狂的戏子">戏子</a></li>
+                <li><a href="http://www.windme.org/" title="一只小小鸟">望风的鸟</a></li>
+                </ul>
+        </section>
+    
+            <section class="widget">
+            <h3 class="widget-title">其它</h3>
+            <ul class="widget-list">
+                <li><a href="https://blog.kooker.jp/usr/uploads/2024/01/3822690324.apk">FuTV_1.24.0112</a></li>
+                <li><a href="https://bbs.kooker.jp/">BBS</a></li>
+                <li><a href="https://dev.kooker.jp/">DEV</a></li>
+                <li><a href="https://docs.kooker.jp/">DOCS</a></li>
+                <li><a href="https://apps.kooker.jp/">APPS</a></li>
+                <li><a href="{{ site.production_url }}/atom.xml">订阅</a></li>
+                <li><a href="{{ site.production_url }}/sitemap.xml">网站地图</a></li>
+            </ul>
+        </section>
+    
+</div><!-- end #sidebar -->
+        </div><!-- end .row -->
+    </div>
+</div><!-- end #body -->
+
+<footer id="footer" role="contentinfo">
+    <p><strong>&#169; {{ site.time | date: '%Y' }}<a href="{{ site.production_url }}"> {{ site.title }}</a>.</strong></p>
+    <p>Thanks for <a href="https://typecho.org" title="Typecho" rel="external" target="_blank">Typecho</a> UI Designed, Powered by <a href="https://github.com/mojombo/jekyll" title="Jekyll is a simple, blog aware, static site generator." rel="external" target="_blank">Jekyll</a> and <a href="https://pages.github.com/" title="GitHub Pages" rel="external" target="_blank">Github Pages</a>.</p>
+
+</footer><!-- end #footer -->
+</body>
+</html>

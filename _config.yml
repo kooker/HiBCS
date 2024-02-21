@@ -1,0 +1,21 @@
+auto: true
+markdown: rdiscount
+permalink: /:title
+production_url: https://clash.kooker.jp
+pygments: true
+paginate: 10
+
+title: Hi kooker
+tagline: 吃饱饭，干好活。
+author:
+  name: kooker
+  real_name: 马来
+  email: admin@kooker.jp
+  info: 已在不惑之年
+  description: 胸无大志，悲观冷血，不苟言笑，聪明好学！
+cdn_url: https://cdn.kooker.jp/
+soft_url: https://cdn.kooker.jp/assets/soft/
+apps_url: https://cdn.kooker.jp/assets/apps/
+img_url: https://cdn.kooker.jp/assets/img/
+media_url: https://cdn.kooker.jp/assets/video/
+
